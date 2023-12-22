@@ -11,6 +11,10 @@ elem x (y : ys) = x == y || elem x ys
 elem' :: Eq a => a -> [a] -> Bool
 elem' y = foldr (\ x r -> x == y || r) False
 
+map :: (a -> b) -> [a] -> [b]
+map _ [] = []
+map f (x : xs) = f x : map f xs
+
 map' :: (a -> b) -> [a] -> [b]
 map' f = foldr (\ x r -> f x : r) []
 
