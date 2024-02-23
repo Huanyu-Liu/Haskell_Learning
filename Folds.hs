@@ -43,6 +43,9 @@ zip' :: [a] -> [b] -> [(a, b)]
 zip' (x : xs) = foldr (\ y r -> (x, y) : r) []
 zip' [] = const []
 
+zip1 :: [a] -> [b] -> [(a, b)]
+zip1 = foldr (\ x ) []
+
 zip :: [a] -> [b] -> [(a, b)]
 zip (x : xs) (y : ys) = (x, y) : zip xs ys
 zip _ _ = []
